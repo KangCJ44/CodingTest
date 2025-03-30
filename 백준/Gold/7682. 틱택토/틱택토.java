@@ -31,18 +31,22 @@ public class Main{
         boolean xWin = isWinner(boardArray, 'X');
         boolean oWin = isWinner(boardArray, 'O');
         
+        //둘 다 승자인 경우 invalid 반환
         if (xWin && oWin) {
             return "invalid";
         }
         
+        //x가 승자인 경우 xCount가 oCount보다 1 많아야 한다.
         if (xWin && xCount != oCount + 1) {
             return "invalid";
         }
         
+        //o가 승자인 경우 xCount와 oCount가 같아야한다.
         if (oWin && xCount != oCount) {
             return "invalid";
         }
         
+        //승자가 없을 경우 모든 칸이 가득 차야한다.
         if (!xWin && !oWin && tiktok.contains(".")) {
             return "invalid";
         }
